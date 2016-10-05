@@ -1,6 +1,6 @@
-: ${CATTLE_REPO:="https://github.com/rancher/cattle.git"}
+: ${CATTLE_REPO:="https://github.com/clearent/cattle.git"}
 : ${CATTLE_WORK_DIR:=cattle}
-: ${CATTLE_COMMIT:=master}
+: ${CATTLE_COMMIT:=ssl_backends}
 
 : ${PYTHON_AGENT_REPO:="https://github.com/rancher/python-agent.git"}
 : ${PYTHON_AGENT_WORK_DIR:=python-agent}
@@ -10,9 +10,9 @@
 : ${HOST_API_WORK_DIR:=host-api}
 : ${HOST_API_COMMIT:=master}
 
-: ${UI_REPO:="https://github.com/rancher/ui.git"}
+: ${UI_REPO:="https://github.com/clearent/ui.git"}
 : ${UI_WORK_DIR:=ui}
-: ${UI_COMMIT:=master}
+: ${UI_COMMIT:=ssl_backends}
 
 : ${VALIDATION_TESTS_REPO:="https://github.com/rancher/validation-tests.git"}
 : ${VALIDATION_TESTS_WORK_DIR:=validation-tests}
@@ -38,7 +38,7 @@
 : ${DEFAULT_CATTLE_RANCHER_COMPOSE_LINUX_URL:="https://releases.rancher.com/compose/${CATTLE_RANCHER_COMPOSE_VERSION}/rancher-compose-linux-amd64.tar.gz"}
 : ${DEFAULT_CATTLE_RANCHER_COMPOSE_DARWIN_URL:="https://releases.rancher.com/compose/${CATTLE_RANCHER_COMPOSE_VERSION}/rancher-compose-darwin-amd64.tar.gz"}
 : ${DEFAULT_CATTLE_RANCHER_COMPOSE_WINDOWS_URL:="https://releases.rancher.com/compose/${CATTLE_RANCHER_COMPOSE_VERSION}/rancher-compose-windows-386.zip"}
- 
+
 declare -A PROJECT_MAP
 
 PROJECT_MAP[CATTLE_REPO]="${CATTLE_REPO}"
@@ -66,7 +66,7 @@ PROJECT_MAP[HOST_API_WORK_DIR]="${HOST_API_WORK_DIR}"
 PROJECT_MAP[HOST_API_COMMIT]="${HOST_API_COMMIT}"
 PROJECT_MAP[HOST_API_PACKAGE]="true"
 
-export PROJECT_MAP CATTLE_API_UI_INDEX 
+export PROJECT_MAP CATTLE_API_UI_INDEX
 export CATTLE_LOGBACK_OUTPUT_CONSOLE CATTLE_LOGBACK_OUTPUT_LOGSTASH_CONSOLE
 export DEFAULT_CATTLE_MACHINE_EXECUTE
 export CATTLE_RANCHER_COMPOSE_VERSION DEFAULT_CATTLE_RANCHER_COMPOSE_LINUX_URL DEFAULT_CATTLE_RANCHER_COMPOSE_DARWIN_URL DEFAULT_CATTLE_RANCHER_COMPOSE_WINDOWS_URL
